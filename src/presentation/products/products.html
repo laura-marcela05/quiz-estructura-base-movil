@@ -1,0 +1,27 @@
+<!-- Pantalla de registro de productos: envía el formulario a POST /products -->
+<h2>Registro de productos</h2>
+<input id="a" placeholder="Nombre" />
+<input id="b" placeholder="Precio" />
+<button onclick="guardar()">Guardar</button>
+<ul id="lista"></ul>
+<script>
+  // Carga y muestra los productos guardados.
+  async function cargar() {
+    const datos = await (await fetch("/products")).json();
+    lista.innerHTML = datos
+      .map((p) => `<li>${p.nombre} - $${p.precio}</li>`)
+      .join("");
+  }
+  // Envía el nuevo producto a la API y refresca la lista.
+  async function guardar() {
+    const r = await fetch("/products", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nombre: a.value, precio: b.value }),
+    });
+    if (!r.ok) alert((await r.json()).error);
+    a.value = b.value = "";
+    cargar();
+  }
+  cargar();
+</script>

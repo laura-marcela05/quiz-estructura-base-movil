@@ -1,0 +1,25 @@
+{
+  "name": "quiz-estructura-base-movil",
+  "version": "1.0.0",
+  "description": "**Programación Móvil · CORHUILA**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laura-marcela05/quiz-estructura-base-movil.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/laura-marcela05/quiz-estructura-base-movil/issues"
+  },
+  "homepage": "https://github.com/laura-marcela05/quiz-estructura-base-movil#readme",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.2.1"
+  }
+}
